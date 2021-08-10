@@ -1468,3 +1468,20 @@ Received Import Request.
 Start importing Assets/Scenes/Main Menu.unity using Guid(b8b3a0acb85cb3e4d83d95b2a281bfd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3149c3973f771f5d40032651f0f06e67') in 0.002346 seconds 
   Import took 0.006077 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 285.364613 seconds.
+  path: Assets/Scenes/Game Over.unity
+  artifactKey: Guid(874365cf5b2247446be0e6696eb00c74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game Over.unity using Guid(874365cf5b2247446be0e6696eb00c74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a22631a997f0d4ce98f528ce2049ae5b') in 0.005556 seconds 
+  Import took 0.009214 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.099254 seconds.
+  path: Assets/Scenes/Main Menu.unity
+  artifactKey: Guid(b8b3a0acb85cb3e4d83d95b2a281bfd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Main Menu.unity using Guid(b8b3a0acb85cb3e4d83d95b2a281bfd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a766f10baf91986934b3c73ee15fec2') in 0.002249 seconds 
+  Import took 0.017417 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

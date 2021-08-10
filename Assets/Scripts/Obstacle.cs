@@ -8,6 +8,14 @@ public class Obstacle : MonoBehaviour
     // Config Params
     [SerializeField] float speed = 5f;
 
+    // Cached References
+    Collider2D boxCollider;
+
+    private void Start()
+    {
+        boxCollider = GetComponent<Collider2D>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -21,7 +29,12 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene("Game Over");
-        Destroy(gameObject);
+        bool isTouchingPlayer = boxCollider.IsTouchingLayers(LayerMask.GetMask("Player"));
+
+        if (isTouchingPlayer)
+        {
+            SceneManager.LoadScene("Game Over");
+            Destroy(gameObject);
+        }
     }
 }
