@@ -11,8 +11,8 @@ public class ObstacleSpawner : MonoBehaviour
     float timebtwSpawn;
     [SerializeField] float startTimeBtwSpawn = 3f;
     Vector3 randomPos;
-    [SerializeField] float minX = -2f;
-    [SerializeField] float maxX = 2f;
+    [SerializeField] float minX = -1.89f;
+    [SerializeField] float maxX = 1.89f;
 
     // Update is called once per frame
     void Update()

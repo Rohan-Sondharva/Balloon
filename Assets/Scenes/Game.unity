@@ -1273,6 +1273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1032129285}
+  scoreIncreasePerSecond: 1
 --- !u!1 &1577221690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,6 +1821,10 @@ PrefabInstance:
     - target: {fileID: 1119232899205238312, guid: 82b35a249e0ba4c4a96edad0867b73a7, type: 3}
       propertyPath: m_Name
       value: Obstacles Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119232899205238313, guid: 82b35a249e0ba4c4a96edad0867b73a7, type: 3}
+      propertyPath: startTimeBtwSpawn
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1119232899205238318, guid: 82b35a249e0ba4c4a96edad0867b73a7, type: 3}
       propertyPath: m_RootOrder

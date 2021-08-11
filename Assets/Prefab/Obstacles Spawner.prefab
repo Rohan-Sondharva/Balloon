@@ -45,5 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 6544198168521895422, guid: f9b2f05bed7c5d24eb35bb328a3edbde, type: 3}
   startTimeBtwSpawn: 3
-  minX: -2
-  maxX: 2
+  minX: -1.89
+  maxX: 1.89
