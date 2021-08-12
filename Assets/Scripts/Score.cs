@@ -16,8 +16,18 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        IncreasingScorePerSecond();
+    }
+
+    private void IncreasingScorePerSecond()
+    {
         scoreInInt = (int)Math.Round(score);
         scoreText.text = scoreInInt.ToString();
         score += scoreIncreasePerSecond * Time.deltaTime;
+    }
+
+    public void AddToScore(int scoreAmount)
+    {
+        score += scoreAmount;
     }
 }
