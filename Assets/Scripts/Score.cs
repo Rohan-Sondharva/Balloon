@@ -28,7 +28,7 @@ public class Score : MonoBehaviour
     {
         scoreInInt = (int)Math.Round(score);
         scoreText.text = scoreInInt.ToString();
-        scoreIncreasePerSecond = Mathf.Lerp(minScoreIncreasePerSecond, maxScoreIncreasePerSecond, GetScorePercent());
+        scoreIncreasePerSecond = Mathf.Lerp(minScoreIncreasePerSecond, maxScoreIncreasePerSecond, GetScorePercent());  // Increase Score Increase PerSec variable from min to max in 60 seconds
         score += scoreIncreasePerSecond * Time.deltaTime;
     }
 

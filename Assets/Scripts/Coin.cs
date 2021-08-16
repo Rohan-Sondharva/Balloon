@@ -7,7 +7,10 @@ public class Coin : MonoBehaviour
 {
     // Config Params
     public int coinScore = 10;
-    [SerializeField] float speed = 5f;
+    [SerializeField] float speed;
+    [SerializeField] float minSpeed = 3f;
+    [SerializeField] float maxSpeed = 10f;
+    [SerializeField] float secToMaxSpeed = 60f;
     Score score;
 
     // Cached References
@@ -23,6 +26,14 @@ public class Coin : MonoBehaviour
     void Update()
     {
         CoinMovingDown();
+        IncreasingSpeedOvertime();
+        Debug.Log(speed);
+    }
+
+    void IncreasingSpeedOvertime()
+    {
+        // Increase the speed to max speed in 60 seconds
+        speed = Mathf.Lerp(minSpeed, maxSpeed, GetSpeedPercent());
     }
 
     private void CoinMovingDown()
@@ -40,5 +51,10 @@ public class Coin : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    float GetSpeedPercent()
+    {
+        return Mathf.Clamp01(Time.timeSinceLevelLoad / secToMaxSpeed);
     }
 }

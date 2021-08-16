@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour
     // Config Params
     public float moveSpeed = 20f;
     public float speedModifier = 0.2f;
+    [SerializeField] float minBoundary = -2.6f;
+    [SerializeField] float maxBoundary = 2.6f;
     Touch touch;
     float dirX;
 
@@ -35,7 +37,8 @@ public class Movement : MonoBehaviour
 
             if (touch.phase == TouchPhase.Moved)
             {
-                transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speedModifier * Time.deltaTime, transform.position.y, transform.position.z);
+                var posX = Mathf.Clamp(transform.position.x, minBoundary, maxBoundary);
+                transform.position = new Vector3(posX + touch.deltaPosition.x * speedModifier * Time.deltaTime, transform.position.y, transform.position.z);
             }
         }
     }
@@ -43,7 +46,8 @@ public class Movement : MonoBehaviour
     private void MoveByGyro()
     {
         dirX = Input.acceleration.x * moveSpeed;
-        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -2.6f, 2.6f), transform.position.y);
+        var PosX = Mathf.Clamp(transform.position.x, minBoundary, maxBoundary);
+        transform.position = new Vector2(PosX, transform.position.y);
     }
 
     private void FixedUpdate()
