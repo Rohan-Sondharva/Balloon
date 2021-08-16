@@ -7,9 +7,14 @@ using System;
 
 public class Score : MonoBehaviour
 {
+    // Config Params
     [SerializeField] TextMeshProUGUI scoreText;
-    [SerializeField] float scoreIncreasePerSecond = 1f;
+    [SerializeField] float scoreIncreasePerSecond;
+    [SerializeField] float minScoreIncreasePerSecond = 1f;
+    [SerializeField] float maxScoreIncreasePerSecond = 10f;
+
     float score = 0;
+    float secToMaxIncreasePerSec = 60f;
     int scoreInInt;
 
 
@@ -19,10 +24,11 @@ public class Score : MonoBehaviour
         IncreasingScorePerSecond();
     }
 
-    private void IncreasingScorePerSecond()
+    void IncreasingScorePerSecond()
     {
         scoreInInt = (int)Math.Round(score);
         scoreText.text = scoreInInt.ToString();
+        scoreIncreasePerSecond = Mathf.Lerp(minScoreIncreasePerSecond, maxScoreIncreasePerSecond, GetScorePercent());
         score += scoreIncreasePerSecond * Time.deltaTime;
     }
 
@@ -30,4 +36,10 @@ public class Score : MonoBehaviour
     {
         score += scoreAmount;
     }
+
+    float GetScorePercent()
+    {
+        return Mathf.Clamp01(Time.timeSinceLevelLoad / secToMaxIncreasePerSec);
+    }
+
 }
